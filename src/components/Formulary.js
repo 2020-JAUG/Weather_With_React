@@ -15,6 +15,14 @@ const Formulary = () => {
             <div className="input-field col s12">
                 <select name="pais">
                     <option value="">-- Select a Country --</option>
+                        <option value="VE">Venezuela</option>
+                        <option value="PH">Philippines</option>
+                        <option value="US">United States of America</option>
+                        <option value="ES">Spain</option>
+                        <option value="MX">México</option>
+                        <option value="AR">Argentina</option>
+                        <option value="CR">Costa Rica</option>
+                        <option value="JP">Japan</option>
                 </select>
                 <label htmlFor="pais">Country: </label>
             </div>
