@@ -12,7 +12,7 @@ nav .brand-logo {
 
 .contenedor-form {
     padding: 3rem 0 1px 0;
-    background-color: #0d5b80;
+    background-color: #25abe9;
 }
 
 .input-field label {
@@ -42,4 +42,20 @@ input[type=text]:not(.browser-default):focus:not([readonly]) {
 input[type=text]:not(.browser-default):focus:not([readonly]) + label {
     color: white;
 }
+
+.mensaje {
+    text-align: center;
+    font-size: 2rem;
+}
+  .buscador i {
+    width: 100%;
+}
+  .error {
+    padding: 1rem!important;
+    color:white;
+    margin-top: 3rem;
+    text-align: center;
+    text-emphasis: left;
+}
+  
   
