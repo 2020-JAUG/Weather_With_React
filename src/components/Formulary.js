@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Formulary = () => {
+
+    const [lokkFor, setLookFor] = useState ({
+        ciudad: '',
+        pais: ''
+    });
+
     return ( 
         <form>
             <div className="input-field col s12">
