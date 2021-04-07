@@ -2,10 +2,13 @@ import React, { useState } from 'react'
 
 const Formulary = () => {
 
+    //States
     const [lookFor, setLookFor] = useState ({
         ciudad: '',
         pais: ''
     });
+
+    const [error, setError] = useState (false);
 
     //Destructuring
     const {ciudad, pais} = lookFor;
@@ -18,8 +21,27 @@ const Formulary = () => {
         });
     }
 
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        //To validate
+        if(ciudad.trim() === '' || pais.trim === '') {
+            setError(true);
+            return;
+        }
+
+        setError(false);
+
+        //Pass it to the main component
+
+
+    }
+
     return ( 
-        <form>
+        <form
+            onSubmit={handleSubmit}
+        >
+            { error ? <p className="red darken-4 error">All fields are required</p> : null }
             <div className="input-field col s12">
                 <input
                     type="text"
@@ -50,6 +72,15 @@ const Formulary = () => {
                             <option value="JP">Japan</option>
                 </select>
                 <label htmlFor="pais">Country: </label>
+            </div>
+
+            <div className="input-field col s12">
+                <button
+                    type="submit"
+                    value="Buscar Clima"
+                    className="waves-effect waves-light btn-large btn-block yellow accent-5 col s12"
+                    >Look for Weather
+                </button>
             </div>
         </form>
      );
