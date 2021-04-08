@@ -1,9 +1,37 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import Header from './components/Header';
 import Formulary from './components/Formulary';
 
 
 function App() {
+
+  const [lookFor, setLookFor] = useState ({
+    ciudad: '',
+    pais: ''
+  });
+
+  const [consult, setConsult] = useState(false);
+
+  const {ciudad, pais} = lookFor;
+
+  useEffect(() => {
+    const consultAPI = async () => {
+
+      if(consult) {
+
+        const appId = 'b94a9821f9a4bca6761caadb4902aa09';
+        const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
+
+      const aswer = await fetch(url);
+      const result = await aswer.json();
+
+      console.log(result)
+      }
+
+    }
+    consultAPI();
+  }, [ciudad, consult, pais]);
+
   return (
     <Fragment>
       <Header
@@ -14,7 +42,11 @@ function App() {
         <div className="container">
           <div className="row">
             <div className="col m6 s12">
-              <Formulary />
+              <Formulary
+                lookFor={lookFor}
+                setLookFor={setLookFor}
+                setConsult={setConsult}
+               />
             </div>
             <div className="col m6 s12">
               2
