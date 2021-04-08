@@ -43,7 +43,9 @@ function App() {
 
     }
     consultAPI();
-  }, [ciudad, consult, pais]);
+
+   // eslint-disable-next-line
+  }, [consult]);
 
   //Conditional loading of components
   let component;
