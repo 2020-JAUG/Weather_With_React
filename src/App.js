@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import Header from './components/Header';
 import Formulary from './components/Formulary';
+import Clime from './components/Clime';
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
 
   const [consult, setConsult] = useState(false);
 
+  const [result, setResult] = useState({});
+
   const {ciudad, pais} = lookFor;
 
   useEffect(() => {
@@ -22,10 +25,10 @@ function App() {
         const appId = 'b94a9821f9a4bca6761caadb4902aa09';
         const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
 
-      const aswer = await fetch(url);
-      const result = await aswer.json();
+        const aswer = await fetch(url);
+        const result = await aswer.json();
 
-      console.log(result)
+       setResult(result);
       }
 
     }
@@ -49,7 +52,9 @@ function App() {
                />
             </div>
             <div className="col m6 s12">
-              2
+              <Clime
+                result={result}
+              />
             </div>
           </div>
         </div>
