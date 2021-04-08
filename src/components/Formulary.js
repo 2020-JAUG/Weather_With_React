@@ -37,7 +37,7 @@ const Formulary = () => {
 
     }
 
-    return ( 
+    return (
         <form
             onSubmit={handleSubmit}
         >
@@ -54,13 +54,13 @@ const Formulary = () => {
             </div>
 
             <div className="input-field col s12">
-                <select 
+                <select
                     name="pais"
                     id="pais"
                     value={pais}
                     onChange={handleChange}
                     >
-                        
+
                         <option value="">-- Select a Country --</option>
                             <option value="VE">Venezuela</option>
                             <option value="PH">Philippines</option>
@@ -85,5 +85,5 @@ const Formulary = () => {
         </form>
      );
 }
- 
+
 export default Formulary;

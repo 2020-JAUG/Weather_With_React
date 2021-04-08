@@ -6,7 +6,7 @@ import Formulary from './components/Formulary';
 function App() {
   return (
     <Fragment>
-      <Header 
+      <Header
         title='Weather React App'
       />
 
