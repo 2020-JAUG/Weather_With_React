@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const Clime = ({result}) => {
 
@@ -25,6 +27,10 @@ const Clime = ({result}) => {
             </div>
         </div>
      );
+}
+
+Clime.prototype = {
+    result: PropTypes.object.isRequired
 }
 
 export default Clime;

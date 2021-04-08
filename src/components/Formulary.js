@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Error from './Error';
+import PropTypes from 'prop-types';
 
 const Formulary = ({lookFor, setLookFor, setConsult}) => {
 
@@ -79,6 +80,12 @@ const Formulary = ({lookFor, setLookFor, setConsult}) => {
             </div>
         </form>
      );
+}
+
+Formulary.prototype = {
+    lookFor : PropTypes.object.isRequired,
+    setLookFor : PropTypes.func.isRequired,
+    setConsult : PropTypes.func.isRequired
 }
 
 export default Formulary;
