@@ -29,6 +29,7 @@ function App() {
         const result = await aswer.json();
 
        setResult(result);
+       setConsult(false);
       }
 
     }
