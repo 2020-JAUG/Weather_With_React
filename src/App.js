@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import Header from './components/Header';
 import Formulary from './components/Formulary';
 import Clime from './components/Clime';
+import Error from './components/Error';
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
   const [consult, setConsult] = useState(false);
 
   const [result, setResult] = useState({});
+
+  const [error, setError] = useState(false);
 
   const {ciudad, pais} = lookFor;
 
@@ -30,11 +33,27 @@ function App() {
 
        setResult(result);
        setConsult(false);
+
+       if(result.cod === '404') {
+          setError(true);
+        } else {
+          setError(false);
+        }
       }
 
     }
     consultAPI();
   }, [ciudad, consult, pais]);
+
+  //Conditional loading of components
+  let component;
+  if(error) {
+    component = <Error message='No results' />
+  } else {
+    component = <Clime
+                  result={result}
+                />
+  }
 
   return (
     <Fragment>
@@ -53,9 +72,7 @@ function App() {
                />
             </div>
             <div className="col m6 s12">
-              <Clime
-                result={result}
-              />
+              {component}
             </div>
           </div>
         </div>
