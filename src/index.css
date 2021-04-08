@@ -21,8 +21,8 @@ nav .brand-logo {
 
 .input-field input[type=text]:focus + label {
     color: white;
-} 
-  
+}
+
 .input-field input[type=text]:focus {
     border-bottom: 1px solid white;
     box-shadow: 0 1px 0 0 #000;
@@ -47,15 +47,34 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
     text-align: center;
     font-size: 2rem;
 }
-  .buscador i {
+
+.buscador i {
     width: 100%;
 }
-  .error {
+
+.error {
     padding: 1rem!important;
     color:white;
     margin-top: 3rem;
     text-align: center;
     text-emphasis: left;
 }
-  
-  
+
+.card-panel h2 {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.card-panel p {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.temperatura {
+    font-size: 4rem!important;
+}
+
+.temperatura span {
+    font-size: 2rem!important;
+    vertical-align: super;
+}
