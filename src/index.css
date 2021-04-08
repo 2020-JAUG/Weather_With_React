@@ -78,3 +78,13 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
     font-size: 2rem!important;
     vertical-align: super;
 }
+
+.btn-block {
+    display: block!important;
+}
+
+.error {
+    padding: 1rem!important;
+    text-align: center!important;
+    color: #FFF!important;
+}
