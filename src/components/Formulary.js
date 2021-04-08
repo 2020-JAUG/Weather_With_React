@@ -1,12 +1,6 @@
 import React, { useState } from 'react'
 
-const Formulary = () => {
-
-    //States
-    const [lookFor, setLookFor] = useState ({
-        ciudad: '',
-        pais: ''
-    });
+const Formulary = ({lookFor, setLookFor, setConsult}) => {
 
     const [error, setError] = useState (false);
 
@@ -25,16 +19,14 @@ const Formulary = () => {
         e.preventDefault();
 
         //To validate
-        if(ciudad.trim() === '' || pais.trim === '') {
+        if(ciudad.trim() === '' || pais.trim() === '') {
             setError(true);
             return;
         }
 
         setError(false);
 
-        //Pass it to the main component
-
-
+        setConsult(true);
     }
 
     return (
